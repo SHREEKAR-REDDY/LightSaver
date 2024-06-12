@@ -32,6 +32,8 @@ pip install pyinstaller
 pyinstaller --onefile 'LightSaver.py'
 
 pyinstaller --onefile 'Watchmen.py'
+
+pyinstaller --onefile 'App.py'
 ```
 
 **Step 3:**

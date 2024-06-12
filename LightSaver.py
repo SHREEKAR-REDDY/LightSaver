@@ -1,5 +1,5 @@
 from pynput import keyboard
-import screen_brightness_control as sbc
+from screen_brightness_control import set_brightness
 
 # 1. Figure out a way to detect non character keys ✔️
 # 2. Write logic to kill the program when ctrl+c is pressed ✔️
@@ -9,15 +9,23 @@ import screen_brightness_control as sbc
 def on_press(key):
     if str(key) == "<78>":
         print("🌃  Dark mode activated.")
-        # current_brightness = sbc.get_brightness(display=0)
-        sbc.set_brightness(1)
+        # current_brightness = get_brightness(display=0)
+        set_brightness(1)
     elif str(key) == "<77>":
         print("💡  Power levels at 400%")
-        # current_brightness = sbc.get_brightness(display=0)
-        sbc.set_brightness(50)
+        # current_brightness = get_brightness(display=0)
+        set_brightness(50)
     elif str(key) == "<67>":
         exit()
 
+def set_max_brightness():
+    set_brightness(100)
+
+def set_min_brightness():
+    set_brightness(1)
+
+def increase_brightness():
+    set_brightness(60)
 
 if __name__ == "__main__":
     print("🌞 Welcome to the brightness control program. It is a revolutionary program to control brightness (shocker!) 😲 ")

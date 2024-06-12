@@ -1,3 +1,4 @@
 screen-brightness-control
 pynput
 pyinstaller
+pyautogui
